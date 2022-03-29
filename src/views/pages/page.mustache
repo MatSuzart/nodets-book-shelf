@@ -1,6 +1,8 @@
 {{>partials/header}}
-<section class="banner" style="background-image: url('images/')">Todos</section>
-<h2>Todos</h2>
+
+{{#banner}}
+<section class="banner" style="background-image: url('images/{{background}}')">{{title}}</section>
+<h2>{{title}}</h2>
 
 <div class="container list">
     <div class="item">
@@ -10,4 +12,5 @@
         <div class="item--genre"></div>
     </div>
 </div>
+
 {{>partials/footer}}
