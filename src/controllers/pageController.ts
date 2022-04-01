@@ -1,15 +1,18 @@
 import { Request, Response} from 'express';
 
+import { Book } from '../models/book';
 import { createMenuObject } from '../helpers/CreateMenuObject';
 
 
 export const fantasy = (req: Request, res:Response)=>{
+    let list = Book.getFromType('fantasy');
     res.render('pages/page', {
         menu: createMenuObject('fantasy'),
         banner: {
             tile: 'Fantasy',
             background: 'fantasy.jpg'
-        }
+        },
+        Book
     });
 
 }
@@ -37,12 +40,15 @@ export const literature = (req: Request, res:Response)=>{
 }
 
 export const home = (req: Request, res:Response)=>{
+    let list = Book.getAll();
+
     res.render('pages/page', {
         menu: createMenuObject('all'),
         banner: {
             tile: 'Todos os livros',
             background: 'allbooks.jpg'
-        }
+        },
+        Book
     });
 
 

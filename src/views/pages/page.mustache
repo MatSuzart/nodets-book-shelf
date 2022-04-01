@@ -5,12 +5,19 @@
 <h2>{{title}}</h2>
 
 <div class="container list">
+{{#list}}
     <div class="item">
-        <img src="images/pastor-alemao.jpg" class="item--image" />
-        <div class="item--name"></div>
-        <div class="item--color"></div>
-        <div class="item--genre"></div>
+        <img src="images/{{image}}" class="item--image" />
+        <div class="item--name">{{name}}</div>
+        <div class="item--genre">{{description}}</div>
     </div>
+    {{/list}}
 </div>
+
+{{^list}}
+<div class="container no-list">
+    <h2>  NÃO HÁ LIVROS  </h2>
+</div> 
+{{/list}}
 
 {{>partials/footer}}
